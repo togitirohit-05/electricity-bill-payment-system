@@ -15,6 +15,12 @@ class TestBilling(unittest.TestCase):
     def test_units_in_third_slab(self):
         self.assertEqual(calculateBill(450), 2400)
 
+    def test_zero_units(self):
+        self.assertEqual(calculateBill(0), 0)
+
+    def test_free_limit_boundary(self):
+        self.assertEqual(calculateBill(100), 0)
+
 
 if __name__ == '__main__':
     unittest.main()
